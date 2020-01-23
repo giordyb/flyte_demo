@@ -15,8 +15,9 @@ download_dataset = SdkTask.fetch_latest("flytedemo","development","fk_tasks.task
 @workflow_class
 class myworkflow(object):
     string_in = Input(Types.String, required=True, help="input string")
-    dataset = Input(Types.CSV, default=Types.CSV.create_at_known_location(
-        "http://172.16.140.171:8000/label_summary.csv"),
+    csv_url = "https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2018-financial-year-provisional/Download-data/annual-enterprise-survey-2018-financial-year-provisional-csv.csv"
+
+    dataset = Input(Types.CSV, default=Types.CSV.create_at_known_location(csv_url),
                     help="A CSV File")
     return_dataset = download_dataset(dataset=dataset)
     return_pickle = read_pickle(dataset=return_dataset.outputs.out)
