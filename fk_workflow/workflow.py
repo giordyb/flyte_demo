@@ -6,6 +6,7 @@ from flytekit.sdk.tasks import python_task, outputs, inputs
 from flytekit.sdk.types import Types
 from flytekit.sdk.workflow import workflow_class, Output, Input
 from flytekit.common.tasks.task import SdkTask
+
 uppercase_task = SdkTask.fetch_latest("flytedemo","development","fk_tasks.tasks_and_workflow.uppercase_task")
 reverse_task = SdkTask.fetch_latest("flytedemo","development","fk_tasks.tasks_and_workflow.reverse_task")
 read_pickle = SdkTask.fetch_latest("flytedemo","development","fk_tasks.tasks_and_workflow.read_pickle")
