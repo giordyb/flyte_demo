@@ -8,7 +8,7 @@ from flytekit.common import utils, schedules
 from flytekit.sdk.tasks import python_task, outputs, inputs
 from flytekit.sdk.types import Types
 from flytekit.sdk.workflow import workflow_class, Output, Input
-
+from hyperopt import fmin, hp, tpe, rand 
 
 @inputs(input_string=Types.String)
 @outputs(output_string=Types.String)
